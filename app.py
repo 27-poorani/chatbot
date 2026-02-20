@@ -12,7 +12,7 @@ load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 mongo_uri=os.getenv("MONGO_URI")
 client=MongoClient(mongo_uri)
-db=client["chatbot"]
+db=client["chat"]
 collection=db["users"]
 
 app=FastAPI()
