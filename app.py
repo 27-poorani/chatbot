@@ -40,7 +40,7 @@ def get_history(user_id):
 
 prompt=ChatPromptTemplate.from_messages(
     [
-        ("system", "You are a helpful fitness assistant."), #based on this output changes
+        ("system", "You are a song Recommendation system"), #based on this output changes
         ("placeholder", "{history}"),#passing the history of chats to the prompt template
         ("user", "{question}")
     ]
@@ -52,7 +52,7 @@ chain= prompt | llm
 @app.get("/") #root route (get->getting info)
 #if someone hits the root route it will return a message for that the below func
 def home():
-    return {"message":"Welcome to the fitness assistant chatbot API!"}
+    return {"message":"Welcome to the song recommendation system! Ask me for song recommendations based on your preferences."}
 
 @app.post("/chat") #post->posting info/share some info
 def chat(request: ChatRequest):
